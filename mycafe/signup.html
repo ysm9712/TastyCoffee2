@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<link rel="stylesheet" href="style/cafe.css">
+</head>
+
+<body>
+
+<header class="site-header page-header">
+    <a class="brand" href="index.html"><span class="coffee-mark" aria-hidden="true">☕</span><span>Tasty Coffee</span></a>
+    <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span></button>
+</header>
+<nav class="site-nav page-nav" aria-label="주요 메뉴">
+    <a href="index.html">Home</a><a href="story.html">Tasty Story</a><a href="menu.html">메뉴 소개</a><a href="news.html">매장 소식</a><a href="map.html">카페 오는 길</a><a href="center.html">고객 센터</a>
+</nav>
+
+<form>
+
+<table class="join">
+
+<tr>
+    <th colspan="2">☞ 아이디(ID)정보</th>
+</tr>
+
+<tr>
+    <td class="title">* 아이디</td>
+    <td>
+        <input type="text" class="idbox">
+        <input type="button" value="중복검사">
+
+        <br>
+
+        <span class="guide">
+        (4~12자 영문, 숫자 가능. 한글 및 특수문자는 사용할 수 없습니다.)
+        </span>
+    </td>
+</tr>
+
+<tr>
+    <td class="title">* 비밀번호</td>
+    <td>
+        <input type="password" class="pwbox">
+
+        <span class="guide">
+        (4~8자 이내로 만들어 주세요.)
+        </span>
+    </td>
+</tr>
+
+<tr>
+    <td class="title">* 비밀번호 확인</td>
+    <td>
+        <input type="password" class="pwbox">
+
+        <span class="guide">
+        (위 비밀번호와 같이 입력하세요.)
+        </span>
+    </td>
+</tr>
+
+<tr>
+    <th colspan="2">☞ 개인정보</th>
+</tr>
+
+<tr>
+    <td class="title">* 이름(한글)</td>
+    <td>
+        <input type="text">
+
+        <span class="guide">
+        예) 홍길동
+        </span>
+    </td>
+</tr>
+
+<tr>
+    <td class="title">생년월일</td>
+    <td>
+        <input type="date">
+
+        <input type="radio" name="birth">양력
+
+        <input type="radio" name="birth">음력
+    </td>
+</tr>
+
+<tr>
+    <td class="title">* 주소</td>
+
+    <td>
+
+        <input type="text" class="zip">
+
+        <input type="button" value="우편번호 찾기">
+
+        <br><br>
+
+        <input type="text" class="addr">
+
+        <br><br>
+
+        <input type="text" class="addr">
+
+    </td>
+</tr>
+
+<tr>
+
+    <td class="title">* 전화번호</td>
+
+    <td>
+
+        <span class="guide">핸드폰</span>
+
+        <input type="text" class="phone">
+
+        <input type="radio" name="tel">SKT
+
+        <input type="radio" name="tel">KT
+
+        <input type="radio" name="tel">LGT
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td class="title">이메일</td>
+
+    <td>
+
+        <input type="email">
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td class="title">가입인사</td>
+
+    <td>
+
+        <textarea rows="6"></textarea>
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td colspan="2" class="btn">
+
+        <input type="submit" value="확인">
+
+        <input type="reset" value="다시입력">
+
+    </td>
+
+</tr>
+
+</table>
+
+</form>
+
+<script src="style/cafe.js"></script>
+
+</body>
+</html>

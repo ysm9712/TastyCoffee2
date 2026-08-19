@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+:root {
+    --espresso: #3b2922;
+    --coffee: #76513d;
+    --terracotta: #b66a4d;
+    --sage: #6f8068;
+    --cream: #f6f0e7;
+    --paper: #fffdf9;
+    --line: #dfd2c3;
+    --muted: #756b63;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--cream);
+    color: var(--espresso);
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.7;
+}
+
+body::before {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: linear-gradient(rgba(118, 81, 61, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(118, 81, 61, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+    content: '';
+    pointer-events: none;
+}
+
+.main,
+.container {
+    width: min(920px, calc(100% - 32px));
+    margin: 48px auto;
+    padding: clamp(28px, 5vw, 64px);
+    border: 1px solid var(--line);
+    background: rgba(255, 253, 249, 0.94);
+    box-shadow: 0 18px 50px rgba(59, 41, 34, 0.1);
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    color: var(--espresso);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: 0;
+}
+
+h1 {
+    margin-bottom: 18px;
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    line-height: 0.95;
+}
+
+h2 {
+    margin-top: 36px;
+    color: var(--coffee);
+    font-size: 2rem;
+}
+
+h3 {
+    color: var(--terracotta);
+    font-size: 1.45rem;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--espresso);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.coffee-mark {
+    display: none;
+    color: var(--terracotta);
+    font-family: sans-serif;
+    font-size: 1.6rem;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 30px;
+}
+
+.site-nav a,
+.card a {
+    display: inline-block;
+    padding: 7px 11px;
+    color: var(--coffee);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.site-nav a:hover,
+.card a:hover {
+    border-radius: 2px;
+    background: var(--espresso);
+    color: var(--paper);
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    border: 0;
+    background: transparent;
+    color: var(--espresso);
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.menu-toggle span,
+.menu-toggle::before,
+.menu-toggle::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 4px auto;
+    background: currentColor;
+    content: '';
+    transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.menu-toggle[aria-expanded='true']::before {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded='true'] span {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded='true']::after {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+hr {
+    width: min(100%, 620px);
+    height: 1px;
+    margin: 30px auto;
+    border: 0;
+    background: linear-gradient(90deg, transparent, var(--terracotta), transparent);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 8px solid var(--paper);
+    box-shadow: 0 12px 28px rgba(59, 41, 34, 0.16);
+}
+
+p {
+    color: var(--muted);
+}
+
+.company_info,
+.main > p {
+    margin-top: 30px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+address {
+    color: inherit;
+    font-style: normal;
+}
+
+ul,
+ol {
+    width: min(400px, 100%);
+    margin: 16px auto 32px;
+    padding: 20px 32px 20px 58px;
+    border-left: 3px solid var(--sage);
+    background: #f2f1e9;
+    text-align: left;
+}
+
+li {
+    margin: 7px 0;
+    color: var(--coffee);
+}
+
+table {
+    width: min(100%, 620px);
+    margin: 20px auto;
+    border-collapse: collapse;
+    overflow: hidden;
+    background: var(--paper);
+}
+
+th,
+td {
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+}
+
+th {
+    background: var(--sage);
+    color: white;
+    font-weight: 500;
+}
+
+td {
+    color: var(--muted);
+}
+
+iframe {
+    max-width: 100%;
+    border: 0;
+    box-shadow: 0 12px 28px rgba(59, 41, 34, 0.14);
+}
+
+fieldset {
+    width: min(100%, 620px);
+    margin: 24px auto;
+    padding: 24px;
+    border: 1px solid var(--line);
+    text-align: left;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+legend {
+    padding: 0 10px;
+    color: var(--coffee);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+input,
+textarea,
+button {
+    max-width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    font: inherit;
+}
+
+input,
+textarea {
+    padding: 8px 10px;
+    background: var(--paper);
+}
+
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+    padding: 8px 16px;
+    background: var(--espresso);
+    color: var(--paper);
+    cursor: pointer;
+}
+
+button:hover,
+input[type='button']:hover,
+input[type='submit']:hover,
+input[type='reset']:hover {
+    background: var(--terracotta);
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+    background: transparent;
+    color: var(--terracotta);
+}
+
+.join {
+    margin-top: 48px;
+}
+
+.join th {
+    background: var(--espresso);
+    text-align: left;
+}
+
+.join .title {
+    width: 150px;
+    background: #f2ebe1;
+    color: var(--coffee);
+    text-align: right;
+}
+
+.guide {
+    color: var(--terracotta);
+    font-size: 0.75rem;
+}
+
+.btn {
+    text-align: center;
+}
+
+.card {
+    width: min(560px, calc(100% - 32px));
+    margin: 72px auto;
+    padding: 56px 32px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    box-shadow: 0 18px 50px rgba(59, 41, 34, 0.1);
+    text-align: center;
+}
+
+.page-header,
+.page-nav {
+    width: min(920px, calc(100% - 32px));
+}
+
+.page-header {
+    margin: 48px auto 0;
+}
+
+.page-nav {
+    margin: 0 auto 24px;
+}
+
+.intro-header,
+.intro-nav {
+    width: min(560px, calc(100% - 32px));
+}
+
+.intro-header {
+    margin: 32px auto 0;
+}
+
+.intro-nav {
+    margin: 0 auto 24px;
+}
+
+.card .coffee {
+    margin: 12px 0;
+    color: var(--terracotta);
+    font-size: 3rem;
+}
+
+.card .btn {
+    margin: 20px 0;
+    background: var(--espresso);
+    color: var(--paper);
+}
+
+@media (max-width: 640px) {
+    .main,
+    .container {
+        width: calc(100% - 20px);
+        margin: 20px auto;
+        padding: 28px 18px;
+    }
+
+    .page-header,
+    .page-nav,
+    .intro-header,
+    .intro-nav {
+        width: calc(100% - 20px);
+    }
+
+    .page-header,
+    .intro-header {
+        margin-top: 20px;
+    }
+
+    .site-header {
+        margin-bottom: 18px;
+    }
+
+    .menu-toggle {
+        display: block;
+        flex: 0 0 auto;
+        padding: 7px;
+        border: 0;
+        background: transparent;
+        color: var(--espresso);
+    }
+
+    .coffee-mark {
+        display: inline;
+    }
+
+    .site-nav {
+        display: none;
+        margin: 0 0 24px;
+        padding: 8px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+    }
+
+    .site-nav.is-open {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-nav a {
+        width: 100%;
+        padding: 9px 12px;
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    th,
+    td {
+        padding: 8px 6px;
+        font-size: 0.82rem;
+    }
+
+    fieldset {
+        padding: 16px 10px;
+    }
+
+    .join {
+        width: calc(100% - 20px);
+        margin-top: 20px;
+    }
+
+    .join .title {
+        width: 105px;
+        font-size: 0.8rem;
+    }
+}
